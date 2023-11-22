@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Dropdown from './Dropdown';
+import { Outlet } from 'react-router-dom'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className='header'>
+        <h2>Mailbox</h2>
       </header>
-    </div>
+      <div className='main'>
+        <div className='navigation'>
+          <Dropdown name="Favorites">
+            <h3>Sent</h3>
+          </Dropdown>
+          <Dropdown name="Folders">
+            <h3>Inbox</h3>
+            <h3>Draft</h3>
+            <h3>Sent</h3>
+            <h3>Delete</h3>
+          </Dropdown>
+        </div>
+        <Outlet />
+      </div>
+    </>
   );
 }
 

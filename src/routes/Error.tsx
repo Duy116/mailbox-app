@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouteError, isRouteErrorResponse } from 'react-router-dom'
-import './Error.scss'
+import '../App.scss'
 
 function Error() {
     const error = useRouteError();

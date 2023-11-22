@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.scss';
+import '../App.scss';
 import Dropdown from '../Dropdown';
-import { Outlet } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
       <div className='main'>
         <div className='navigation'>
           <Dropdown name="Favorites">
-            <h3>Sent</h3>
+            <NavLink to="/sent">Sent</NavLink>
           </Dropdown>
           <Dropdown name="Folders">
             <h3>Inbox</h3>

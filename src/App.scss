@@ -1,0 +1,70 @@
+// App
+.header {
+  background-color: rgb(41, 58, 207);
+  padding: 5px 5px 5px 20px;
+  display: flex;
+  align-items: center;
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+  input {
+    margin-left: 20px;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.navigation {
+  background-color: rgb(245, 245, 245);
+  width: 160px;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+// Error
+.error {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+}
+
+//Dropdown
+@mixin dropdown {
+  margin: 10px;
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+  }
+  a {
+    font-size: 20px;
+    text-decoration: none;
+  }
+}
+
+.dropdown {
+padding: 10px;
+display: flex;
+align-items: flex-start;
+h2 {
+  margin-top: 5px;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+button {
+  @include dropdown;
+}
+}
+
+.spin {
+transform: rotate(90deg) translateX(3px);
+}

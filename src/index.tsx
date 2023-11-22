@@ -8,16 +8,27 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Error from './routes/Error';
+import Sent from './routes/Sent';
+import Mail from './routes/Mail';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <Error />,
+    children: [
+      {
+        path: "sent",
+        element: <Sent />,
+        children: [
+          {
+            path: ":id",
+            element: <Mail />,
+          }
+        ]
+      }
+    ]
   },
-  {
-
-  }
 ])
 
 

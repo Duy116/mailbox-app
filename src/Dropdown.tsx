@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import './Dropdown.scss';
+import './App.scss';
 
 function Dropdown(props: PropsWithChildren<{name: String}>) {
     const [ isHidden, setIsHidden ] = React.useState(false);
@@ -7,11 +7,14 @@ function Dropdown(props: PropsWithChildren<{name: String}>) {
     return (
         <div className='dropdown'>
             <h2 className={!isHidden ? "spin" : ""}>&gt;</h2>
-            <button onClick={() => setIsHidden(!isHidden)}>{props.name}
-            <div hidden={isHidden}>
-                {props.children}
+            <div>
+                <button onClick={() => setIsHidden(!isHidden)}>
+                    {props.name}
+                </button>
+                <div hidden={isHidden}>
+                    {props.children}
+                </div>
             </div>
-            </button>
         </div>
     )
 }

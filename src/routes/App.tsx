@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.scss';
-import Dropdown from '../Dropdown';
+import Dropdown from '../component/Dropdown';
 import { Outlet, NavLink } from 'react-router-dom'
 
 function App() {
@@ -22,13 +22,11 @@ function App() {
       <div className='main'>
         <div className='navigation'>
           <Dropdown name="Favorites">
-            <NavLink to="/sent">Sent</NavLink>
+            <NavLink to="/inbox" className={({isActive}) => [ isActive ? "link-active" : "link" ].join("")}>Inbox</NavLink>
+            <NavLink to="/sent" className={({isActive}) => [ isActive ? "link-active" : "link" ].join("")}>Sent</NavLink>
           </Dropdown>
           <Dropdown name="Folders">
-            <h3>Inbox</h3>
-            <h3>Draft</h3>
-            <h3>Sent</h3>
-            <h3>Delete</h3>
+
           </Dropdown>
         </div>
         <Outlet />

@@ -19,7 +19,7 @@
 
 .navigation {
   background-color: rgb(245, 245, 245);
-  width: 160px;
+  width: 180px;
 }
 
 .main {
@@ -45,26 +45,52 @@
   &:hover {
     background-color: transparent;
   }
-  a {
-    font-size: 20px;
-    text-decoration: none;
-  }
 }
 
 .dropdown {
-padding: 10px;
-display: flex;
-align-items: flex-start;
-h2 {
-  margin-top: 5px;
-  font-size: 20px;
-  transition: all 0.3s;
+  padding: 10px 10px 0px 10px;
+  display: flex;
+  align-items: flex-start;
+  h2 {
+    margin-top: 5px;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  button {
+    @include dropdown;
+  }
 }
-button {
-  @include dropdown;
+
+.none {
+  display: none;
 }
+
+.dropdown-item {
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .spin {
 transform: rotate(90deg) translateX(3px);
+}
+
+//NavLink
+@mixin link {
+  font-size: 20px;
+  padding: 7px 0px 7px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.link {
+  @include link;
+  font-weight: normal;
+}
+
+.link-active {
+  @include link;
+  font-weight: bold;
+  background-color: gainsboro;
+  border-radius: 5px;
 }

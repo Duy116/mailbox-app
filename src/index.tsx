@@ -10,6 +10,7 @@ import {
 import Error from './routes/Error';
 import Sent from './routes/Sent';
 import Mail from './routes/Mail';
+import Mailbox from './routes/Mailbox';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,16 @@ const router = createBrowserRouter([
           {
             path: ":id",
             element: <Mail />,
+          }
+        ]
+      },
+      {
+        path: "inbox",
+        element: <Mailbox />,
+        children: [
+          {
+            path: ":id",
+            element: <Mail />
           }
         ]
       }

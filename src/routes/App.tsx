@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Dropdown from './Dropdown';
+import Dropdown from '../Dropdown';
 import { Outlet } from 'react-router-dom'
 
 function App() {
@@ -9,6 +9,15 @@ function App() {
     <>
       <header className='header'>
         <h2>Mailbox</h2>
+        <form id="search-form" role="search">
+          <input
+            id="q"
+            aria-label="Search contacts"
+            placeholder="Search"
+            type="search"
+            name="q"
+          />
+        </form>
       </header>
       <div className='main'>
         <div className='navigation'>

@@ -1,0 +1,31 @@
+.header {
+  background-color: rgb(41, 58, 207);
+  padding: 5px 5px 5px 20px;
+  display: flex;
+  align-items: center;
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+  input {
+    margin-left: 20px;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.spin {
+  transform: rotate(90deg) translateX(3px);
+}
+
+.navigation {
+  background-color: rgb(245, 245, 245);
+  width: 160px;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}

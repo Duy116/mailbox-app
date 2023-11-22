@@ -1,0 +1,27 @@
+@mixin dropdown {
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+    h3 {
+      font-size: 20px;
+      text-align: start;
+    }
+  }
+  
+  .dropdown {
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    h2 {
+      margin-top: 5px;
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+    button {
+      @include dropdown;
+    }
+  }

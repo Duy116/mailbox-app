@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import './App.scss';
+import './Dropdown.scss';
 
 function Dropdown(props: PropsWithChildren<{name: String}>) {
     const [ isHidden, setIsHidden ] = React.useState(false);

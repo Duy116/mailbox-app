@@ -8,7 +8,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Error from './routes/Error';
-import Sent from './routes/Sent';
 import Mail from './routes/Mail';
 import Mailbox from './routes/Mailbox';
 
@@ -20,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "sent",
-        element: <Sent />,
+        element: <Mailbox name='Sent'/>,
         children: [
           {
             path: ":id",
@@ -30,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "inbox",
-        element: <Mailbox />,
+        element: <Mailbox name='Inbox'/>,
         children: [
           {
             path: ":id",
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "draft",
-        element: <Mailbox />,
+        element: <Mailbox name='Draft'/>,
         children: [
           {
             path: ":id",
@@ -50,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: "delete",
-        element: <Mailbox />,
+        element: <Mailbox name='Delete'/>,
         children: [
           {
             path: ":id",

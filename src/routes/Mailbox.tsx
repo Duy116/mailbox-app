@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Mailbox() {
+function Mailbox({name} : {name: string} ) {
+
   return (
-    <div>Mailbox</div>
+    <div>{name}</div>
   )
 }
 

@@ -20,9 +20,9 @@ function Navigation() {
                 className={index === "3" ? "link-active" : "link"}>Inbox</Link>
             <Link id="4" to="sent" onClick={(e) => handleClick(e)}
                 className={index === "4" ? "link-active" : "link"}>Sent</Link>
-            <Link id="5" to="sent" onClick={(e) => handleClick(e)}
+            <Link id="5" to="draft" onClick={(e) => handleClick(e)}
                 className={index === "5" ? "link-active" : "link"}>Draft</Link>
-            <Link id="6" to="sent" onClick={(e) => handleClick(e)}
+            <Link id="6" to="delete" onClick={(e) => handleClick(e)}
                 className={index === "6" ? "link-active" : "link"}>Delete</Link>
           </Dropdown>
     </div>

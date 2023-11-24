@@ -37,6 +37,26 @@ const router = createBrowserRouter([
             element: <Mail />
           }
         ]
+      },
+      {
+        path: "draft",
+        element: <Mailbox />,
+        children: [
+          {
+            path: ":id",
+            element: <Mail />
+          }
+        ]
+      },
+      {
+        path: "delete",
+        element: <Mailbox />,
+        children: [
+          {
+            path: ":id",
+            element: <Mail />
+          }
+        ]
       }
     ]
   },

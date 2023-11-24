@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.scss';
-import Dropdown from '../component/Dropdown';
-import { Outlet, NavLink } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import Navigation from '../component/Navigation';
 
 function App() {
 
@@ -20,15 +20,7 @@ function App() {
         </form>
       </header>
       <div className='main'>
-        <div className='navigation'>
-          <Dropdown name="Favorites">
-            <NavLink to="/inbox" className={({isActive}) => [ isActive ? "link-active" : "link" ].join("")}>Inbox</NavLink>
-            <NavLink to="/sent" className={({isActive}) => [ isActive ? "link-active" : "link" ].join("")}>Sent</NavLink>
-          </Dropdown>
-          <Dropdown name="Folders">
-
-          </Dropdown>
-        </div>
+        <Navigation />
         <Outlet />
       </div>
     </>

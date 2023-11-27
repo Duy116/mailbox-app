@@ -1,11 +1,20 @@
+// Color value
+$primary-color: rgb(15, 108, 189);
+$secondary-color:  rgb(207, 228, 250);
+$text-primary: white;
+$text-secondary: black;
+$background-color: rgb(245, 245, 245);
+$active-color: rgb(220, 220, 220);
+$shadow-color: rgb(235, 235, 235);
+
 // App
 .header {
-  background-color: rgb(15, 108, 189);
+  background-color: $primary-color;
   padding: 5px 5px 5px 20px;
   display: flex;
   align-items: center;
   h2 {
-    color: white;
+    color: $text-primary;
     font-size: 20px;
   }
   input {
@@ -24,7 +33,7 @@
 .main {
   display: flex;
   height: 100vh;
-  background-color: rgb(245, 245, 245);
+  background-color: $background-color;
 }
 
 // Error
@@ -80,7 +89,7 @@ transform: rotate(90deg) translateX(3px);
   font-size: 20px;
   padding: 7px 0px 7px 20px;
   text-decoration: none;
-  color: black;
+  color: $text-secondary;
 }
 
 .link {
@@ -91,17 +100,17 @@ transform: rotate(90deg) translateX(3px);
 .link-active {
   @include link;
   font-weight: bold;
-  background-color: rgb(207, 228, 250);
+  background-color: $secondary-color;
   border-radius: 5px;
   &:hover {
-    background-color: gainsboro;
+    background-color: $active-color;
   }
 }
 
 //Mailbox
 @mixin shadow {
   border-radius: 5px;
-  box-shadow: 0px 0px 2px 2px rgb(235, 235, 235);
+  box-shadow: 0px 0px 2px 2px $shadow-color;
 }
 
 .mailbox {
@@ -111,7 +120,7 @@ transform: rotate(90deg) translateX(3px);
 }
 
 .title {
-  background-color: white;
+  background-color: $text-primary;
   @include shadow;
   h2 {
     padding: 10px;

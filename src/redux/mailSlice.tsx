@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from './store'
 
 interface MailState {
     id: number,
@@ -48,5 +47,4 @@ const mailSlice = createSlice({
 })
 
 export const { mailNewMail } = mailSlice.actions
-export const selectTodos = (state: RootState) => state
 export default mailSlice.reducer

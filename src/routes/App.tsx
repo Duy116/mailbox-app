@@ -2,8 +2,11 @@ import React from 'react';
 import '../App.scss';
 import { Outlet } from 'react-router-dom'
 import Navigation from '../component/Navigation';
+import { useAppDispatch } from '../redux/hook';
+import { mailNewMail } from '../redux/mailSlice';
 
 function App() {
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -17,7 +20,9 @@ function App() {
             type="search"
             name="q"
           />
+          <button>S</button>
         </form>
+        <button onClick={() => dispatch(mailNewMail())}>New Mail</button>
       </header>
       <div className='main'>
         <Navigation />

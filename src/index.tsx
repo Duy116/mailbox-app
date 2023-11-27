@@ -10,6 +10,8 @@ import {
 import Error from './routes/Error';
 import Mail from './routes/Mail';
 import Mailbox from './routes/Mailbox';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 const router = createBrowserRouter([
   {
@@ -67,7 +69,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 

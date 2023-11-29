@@ -44,16 +44,6 @@ $shadow-color: rgb(235, 235, 235);
 }
 
 //Dropdown
-@mixin dropdown {
-  margin: 10px;
-  border: none;
-  font-size: 20px;
-  background-color: transparent;
-  &:hover {
-    background-color: transparent;
-  }
-}
-
 .dropdown {
   padding: 10px 10px 0px 10px;
   display: flex;
@@ -64,22 +54,38 @@ $shadow-color: rgb(235, 235, 235);
     transition: all 0.3s;
   }
   button {
-    @include dropdown;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
 
-.none {
-  display: none;
+@keyframes slide-down {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 100%;
+  }
 }
 
 .dropdown-item {
   padding: 0px 10px 0px 10px;
   display: flex;
   flex-direction: column;
+  animation: slide-down 2s linear ease;
+}
+
+.none {
+  display: none;
 }
 
 .spin {
-transform: rotate(90deg) translateX(3px);
+  transform: rotate(90deg) translateX(3px);
 }
 
 //NavLink

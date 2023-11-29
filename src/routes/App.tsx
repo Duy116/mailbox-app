@@ -7,12 +7,15 @@ import { mailNewMail } from '../redux/mailSlice';
 
 function App() {
   const dispatch = useAppDispatch();
+  const handleNewMail = () => {
+    dispatch(mailNewMail());
+  }
 
   return (
     <>
       <header className='header'>
         <h2>Mailbox</h2>
-        <form id="search-form" role="search">
+        <form id="search-form" role="search" className='search'>
           <input
             id="q"
             aria-label="Search contacts"
@@ -20,9 +23,14 @@ function App() {
             type="search"
             name="q"
           />
-          <button>S</button>
+          <button>
+            <img src='/search.png' alt='search' width="15px"/>
+          </button>
         </form>
-        <button onClick={() => dispatch(mailNewMail())}>New Mail</button>
+        <button className='button-new' onClick={() => handleNewMail()}>
+          <img src='/mail.png' alt='mail' width="20px"/>
+          New mail
+        </button>
       </header>
       <div className='main'>
         <Navigation />

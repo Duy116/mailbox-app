@@ -12,6 +12,8 @@ import Mail from './routes/Mail';
 import Mailbox from './routes/Mailbox';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import DeleteBox from './routes/DeleteBox';
+import Draft from './routes/Draft';
 
 const router = createBrowserRouter([
   {
@@ -45,13 +47,13 @@ const router = createBrowserRouter([
         children: [
           {
             path: ":id",
-            element: <Mail />
+            element: <Draft />
           }
         ]
       },
       {
-        path: "delete",
-        element: <Mailbox name='Delete'/>,
+        path: "deleted",
+        element: <DeleteBox />,
         children: [
           {
             path: ":id",

@@ -7,24 +7,25 @@ function Navigation() {
     const handleClick = (e: React.MouseEvent) => {
         setIndex(e.currentTarget.id);
     }
+
   return (
     <div className='navigation'>
-          <Dropdown name="Favorites">
+        <Dropdown name="Favorites">
             <Link id="1" to="inbox" onClick={(e) => handleClick(e)}
                 className={index === "1" ? "link-active" : "link"}>Inbox</Link>
             <Link id="2" to="sent" onClick={(e) => handleClick(e)}
                 className={index === "2" ? "link-active" : "link"}>Sent</Link>
-          </Dropdown>
-          <Dropdown name="Folders">
+        </Dropdown>
+        <Dropdown name="Folders">
             <Link id="3" to="inbox" onClick={(e) => handleClick(e)}
                 className={index === "3" ? "link-active" : "link"}>Inbox</Link>
             <Link id="4" to="sent" onClick={(e) => handleClick(e)}
                 className={index === "4" ? "link-active" : "link"}>Sent</Link>
             <Link id="5" to="draft" onClick={(e) => handleClick(e)}
                 className={index === "5" ? "link-active" : "link"}>Draft</Link>
-            <Link id="6" to="delete" onClick={(e) => handleClick(e)}
+            <Link id="6" to="deleted" onClick={(e) => handleClick(e)}
                 className={index === "6" ? "link-active" : "link"}>Delete</Link>
-          </Dropdown>
+        </Dropdown>
     </div>
   )
 }

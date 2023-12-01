@@ -16,7 +16,6 @@ function Mailbox({name} : {name: string} ) {
   const hanbleDelete = (id: number) => {
     dispatch(deleteMail(id))
   }
-
   return (
     <>
       <div className='mailbox'>

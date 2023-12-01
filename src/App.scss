@@ -172,7 +172,9 @@ $shadow-color: rgb(235, 235, 235);
 
 .date {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   p {
     margin-right: 10px;
   }
@@ -249,7 +251,10 @@ $shadow-color: rgb(235, 235, 235);
 //Search
 .search {
   margin-right: 10px;
+  width: 500px;
+  display: flex;
   input {
+    width: 100%;
     padding: 5px;
     margin-left: 20px;
     font-size: 20px;
@@ -270,6 +275,28 @@ $shadow-color: rgb(235, 235, 235);
       background-color: $active-color;
     }
   }
+}
+.filter {
+  background-color: white;
+  padding: 5px 5px 0px 5px;
+}
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  margin: 5px 0px 0px 20px;
+  overflow: auto;
+  min-width: 480px;
+  padding: 5px;
+  border-spacing: 10px;
+  font-size: 16px;
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+.show {
+  display: block;
 }
 
 //Draft

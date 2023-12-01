@@ -14,6 +14,21 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import DeleteBox from './routes/DeleteBox';
 import Draft from './routes/Draft';
+import SearchBox from './routes/SearchBox';
+
+async function loader({ request }: { request: any}) {
+  const url = new URL(request.url);
+  const filter = {
+    in: url.searchParams.get("in"),
+    from: url.searchParams.get("from"),
+    to: url.searchParams.get("to"),
+    subject: url.searchParams.get("subject"),
+    keywords: url.searchParams.get("keywords"),
+    fromDate: url.searchParams.get("from-date"),
+    toDate: url.searchParams.get("to-date"),
+  };
+  return filter;
+}
 
 const router = createBrowserRouter([
   {
@@ -54,6 +69,17 @@ const router = createBrowserRouter([
       {
         path: "deleted",
         element: <DeleteBox />,
+        children: [
+          {
+            path: ":id",
+            element: <Mail />
+          }
+        ]
+      },
+      {
+        path: "search",
+        element: <SearchBox />,
+        loader: loader,
         children: [
           {
             path: ":id",
